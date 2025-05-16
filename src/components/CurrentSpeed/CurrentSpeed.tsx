@@ -1,4 +1,5 @@
 import Geolocation from '@react-native-community/geolocation';
+import KeepAwake from '@sayem314/react-native-keep-awake';
 import {useEffect, useRef, useState} from 'react';
 import {
   PermissionsAndroid,
@@ -76,6 +77,7 @@ export const CurrentSpeed = () => {
   }, []);
   return (
     <View style={styles.container}>
+      <KeepAwake />
       <Text style={styles.mainSpeed}>{mainSpeed.toString()}</Text>
       <View style={styles.stats}>
         <Text style={styles.maxSpeedLabel}>Max</Text>
