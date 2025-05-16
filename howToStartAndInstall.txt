@@ -23,3 +23,66 @@ adb devices
 
 # 2. Run the app on a specific device
 npx react-native run-android --deviceId ZY22527N74
+
+### compiling APK for production
+
+✅ 1. Genera la clave de firma (solo una vez):
+
+En la terminal (puedes hacerlo desde cualquier parte):
+
+keytool -genkeypair -v -keystore my-release-key.keystore -alias donapo_key -keyalg RSA -keysize 2048 -validity 10000
+
+Esto te generará un archivo llamado my-release-key.keystore. Guarda este archivo en android/app/.
+✅ 2. Edita android/gradle.properties y agrega tus credenciales:
+
+Abre android/gradle.properties y agrega al final:
+
+MYAPP_UPLOAD_STORE_FILE=my-release-key.keystore
+MYAPP_UPLOAD_KEY_ALIAS=donapo_key
+MYAPP_UPLOAD_STORE_PASSWORD=tu_contraseña_aquí
+MYAPP_UPLOAD_KEY_PASSWORD=tu_contraseña_aquí
+
+    Reemplaza los valores con lo que usaste al generar la clave. No lo subas a GitHub.
+
+✅ 3. Edita android/app/build.gradle:
+
+Busca esta sección:
+
+android {
+    ...
+    defaultConfig {
+        ...
+    }
+    ...
+    signingConfigs {
+        release {
+            if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE')) {
+                storeFile file(MYAPP_UPLOAD_STORE_FILE)
+                storePassword MYAPP_UPLOAD_STORE_PASSWORD
+                keyAlias MYAPP_UPLOAD_KEY_ALIAS
+                keyPassword MYAPP_UPLOAD_KEY_PASSWORD
+            }
+        }
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+    }
+}
+
+✅ 4. Genera el APK:
+
+Desde la raíz de tu proyecto, ejecuta:
+
+cd android
+./gradlew assembleRelease
+
+Esto generará un archivo APK en:
+
+android/app/build/outputs/apk/release/app-release.apk
+
+Ese es el APK de producción, firmado y sin menú de desarrollo.
