@@ -8,6 +8,7 @@ import {
   Text,
   View,
 } from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export const CurrentSpeed = () => {
   const [mainSpeed, setMainSpeed] = useState<number>(0);
@@ -86,19 +87,20 @@ export const CurrentSpeed = () => {
       <Text style={styles.mainSpeed}>{mainSpeed.toString()}</Text>
       <Text style={styles.mainSpeedLable}>km/h</Text>
 
-      <View style={styles.statsLabels}>
-        <Text style={styles.label}>MAX</Text>
-        <Text style={styles.label}>AVG</Text>
-      </View>
+      <View style={styles.statsContainer}>
+        <View style={styles.metricBlock}>
+          <Text style={styles.label}>Max</Text>
+          <Ionicons name="speedometer" size={60} color="#ff00ff" />
+          <Text style={styles.stat}>{maxSpeed}</Text>
+          <Text style={styles.unit}>km/h</Text>
+        </View>
 
-      <View style={styles.statsValues}>
-        <Text style={styles.stat}>{maxSpeed.toString()}</Text>
-        <Text style={styles.stat}>{averageSpeed.toString()}</Text>
-      </View>
-
-      <View style={styles.statsValues}>
-        <Text style={styles.stat}>km/h</Text>
-        <Text style={styles.stat}>km/h</Text>
+        <View style={styles.metricBlock}>
+          <Text style={styles.label}>Avg</Text>
+          <Ionicons name="analytics" size={60} color="#ff00ff" />
+          <Text style={styles.stat}>{averageSpeed}</Text>
+          <Text style={styles.unit}>km/h</Text>
+        </View>
       </View>
     </View>
   );
@@ -128,33 +130,33 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
 
-  statsLabels: {
+  statsContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     width: '80%',
-    marginBottom: 10,
-  },
-
-  statsValues: {
-    flexDirection: 'row',
     justifyContent: 'space-between',
-    width: '80%',
+    marginBottom: 20,
   },
-
+  metricBlock: {
+    flex: 1,
+    alignItems: 'center',
+  },
   label: {
     fontSize: 24,
-    color: '#ff00ff', // Fucsia neón
-    fontWeight: 'bold',
+    color: '#ff00ff',
     textShadowColor: '#f0f',
     textShadowRadius: 10,
+    marginBottom: 4,
   },
-
   stat: {
     fontSize: 40,
-    color: '#00ff00', // Verde neón
-    fontWeight: 'bold',
+    color: '#00ff00',
     textShadowColor: '#0f0',
     textShadowRadius: 15,
-    borderWidth: 1,
+    marginVertical: 4,
+  },
+  unit: {
+    fontSize: 24,
+    color: '#00ffff',
+    marginTop: 4,
   },
 });
