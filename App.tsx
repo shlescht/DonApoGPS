@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   container: {
     paddingTop: 50,
     paddingLeft: 10,
-    backgroundColor: 'black',
+    backgroundColor: '#0d011f', // oscuro púrpura
     flex: 1,
   },
 });

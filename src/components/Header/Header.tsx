@@ -1,11 +1,38 @@
-import {StyleSheet, Text} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import Feather from 'react-native-vector-icons/Feather';
 
 export const Header = () => {
-  return <Text style={styles.text}>DonApoGPS</Text>;
+  const handleMenuPress = () => {
+    console.log('Abrir menú o mapa próximamente');
+  };
+
+  return (
+    <View style={styles.container}>
+      <TouchableOpacity onPress={handleMenuPress} style={styles.menuButton}>
+        <Feather name="menu" size={28} color="#0ff" />
+      </TouchableOpacity>
+      <Text style={styles.title}>DonApoGPS</Text>
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
-  text: {
-    color: 'white',
+  container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 16,
+    paddingTop: 20,
+    paddingBottom: 10,
+    backgroundColor: 'black',
+  },
+  menuButton: {
+    marginRight: 16,
+  },
+  title: {
+    color: '#00ffff',
+    fontSize: 28,
+    fontWeight: 'bold',
+    textShadowColor: '#0ff',
+    textShadowRadius: 10,
   },
 });
