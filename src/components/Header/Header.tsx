@@ -1,15 +1,18 @@
+import {useState} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 
 export const Header = () => {
+  const [icon, setIcon] = useState<boolean>(false);
   const handleMenuPress = () => {
     console.log('Abrir menú o mapa próximamente');
+    setIcon(!icon);
   };
 
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={handleMenuPress} style={styles.menuButton}>
-        <Feather name="menu" size={28} color="#0ff" />
+        <Feather name={icon ? 'minimize-2' : 'menu'} size={28} color="#0ff" />
       </TouchableOpacity>
       <Text style={styles.title}>DonApoGPS</Text>
     </View>

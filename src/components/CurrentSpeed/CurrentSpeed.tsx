@@ -14,7 +14,6 @@ const COLORS = {
   neonCyan: '#00ffff',
   neonMagenta: '#ff00ff',
   neonGreen: '#00ff00',
-  darkBg: '#0d011f',
 };
 
 export const CurrentSpeed = () => {
@@ -97,14 +96,14 @@ export const CurrentSpeed = () => {
       <View style={styles.statsContainer}>
         <View style={styles.metricBlock}>
           <Text style={styles.label}>Max</Text>
-          <Ionicons name="speedometer" size={60} color="#ff00ff" />
+          <Ionicons name="speedometer" size={60} color={COLORS.neonMagenta} />
           <Text style={styles.stat}>{maxSpeed}</Text>
           <Text style={styles.unit}>km/h</Text>
         </View>
 
         <View style={styles.metricBlock}>
           <Text style={styles.label}>Avg</Text>
-          <Ionicons name="analytics" size={60} color="#ff00ff" />
+          <Ionicons name="analytics" size={60} color={COLORS.neonMagenta} />
           <Text style={styles.stat}>{averageSpeed}</Text>
           <Text style={styles.unit}>km/h</Text>
         </View>
