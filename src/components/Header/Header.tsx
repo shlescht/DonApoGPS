@@ -34,8 +34,8 @@ const styles = StyleSheet.create({
   title: {
     color: '#00ffff',
     fontSize: 28,
-    fontWeight: 'bold',
     textShadowColor: '#0ff',
     textShadowRadius: 10,
+    fontFamily: 'Audiowide',
   },
 });

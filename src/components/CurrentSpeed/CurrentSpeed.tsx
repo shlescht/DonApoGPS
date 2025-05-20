@@ -91,21 +91,21 @@ export const CurrentSpeed = () => {
     <View style={styles.container}>
       <KeepAwake />
       <Text style={styles.mainSpeed}>{mainSpeed.toString()}</Text>
-      <Text style={styles.mainSpeedLable}>km/h</Text>
+      <Text style={styles.mainSpeedLable}>Km/h</Text>
 
       <View style={styles.statsContainer}>
         <View style={styles.metricBlock}>
           <Text style={styles.label}>Max</Text>
           <Ionicons name="speedometer" size={60} color={COLORS.neonMagenta} />
           <Text style={styles.stat}>{maxSpeed}</Text>
-          <Text style={styles.unit}>km/h</Text>
+          <Text style={styles.unit}>Km/h</Text>
         </View>
 
         <View style={styles.metricBlock}>
           <Text style={styles.label}>Avg</Text>
           <Ionicons name="analytics" size={60} color={COLORS.neonMagenta} />
           <Text style={styles.stat}>{averageSpeed}</Text>
-          <Text style={styles.unit}>km/h</Text>
+          <Text style={styles.unit}>Km/h</Text>
         </View>
       </View>
     </View>
@@ -122,18 +122,18 @@ const styles = StyleSheet.create({
   mainSpeed: {
     fontSize: 200,
     color: COLORS.neonCyan,
-    fontWeight: 'bold',
     textShadowColor: '#0ff', // Glow neón
     textShadowRadius: 20,
+    fontFamily: 'Audiowide',
   },
 
   mainSpeedLable: {
     fontSize: 120,
     color: COLORS.neonCyan,
-    fontWeight: 'bold',
     textShadowColor: '#0ff', // Glow neón
     textShadowRadius: 20,
     marginBottom: 40,
+    fontFamily: 'Audiowide',
   },
 
   statsContainer: {
@@ -142,29 +142,36 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginBottom: 20,
   },
+
   metricBlock: {
     flex: 1,
     alignItems: 'center',
   },
+
   label: {
     fontSize: 24,
     color: COLORS.neonMagenta,
     textShadowColor: '#f0f',
     textShadowRadius: 10,
     marginBottom: 4,
+    fontFamily: 'VT323',
   },
+
   stat: {
-    fontSize: 40,
+    fontSize: 80,
     color: COLORS.neonGreen,
     textShadowColor: '#0f0',
     textShadowRadius: 15,
     marginVertical: 4,
+    fontFamily: 'VT323',
   },
+
   unit: {
     fontSize: 24,
     color: COLORS.neonCyan,
     marginTop: 4,
     textShadowColor: '#0ff', // Glow neón
     textShadowRadius: 20,
+    fontFamily: 'Audiowide',
   },
 });
