@@ -158,5 +158,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: '#00ffff',
     marginTop: 4,
+    textShadowColor: '#0ff', // Glow neón
+    textShadowRadius: 20,
   },
 });
