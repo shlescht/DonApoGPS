@@ -10,6 +10,13 @@ import {
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
+const COLORS = {
+  neonCyan: '#00ffff',
+  neonMagenta: '#ff00ff',
+  neonGreen: '#00ff00',
+  darkBg: '#0d011f',
+};
+
 export const CurrentSpeed = () => {
   const [mainSpeed, setMainSpeed] = useState<number>(0);
   const [maxSpeed, setMaxSpeed] = useState<number>(0);
@@ -115,7 +122,7 @@ const styles = StyleSheet.create({
 
   mainSpeed: {
     fontSize: 200,
-    color: '#00ffff', // Cian neón
+    color: COLORS.neonCyan,
     fontWeight: 'bold',
     textShadowColor: '#0ff', // Glow neón
     textShadowRadius: 20,
@@ -123,7 +130,7 @@ const styles = StyleSheet.create({
 
   mainSpeedLable: {
     fontSize: 120,
-    color: '#00ffff', // Cian neón
+    color: COLORS.neonCyan,
     fontWeight: 'bold',
     textShadowColor: '#0ff', // Glow neón
     textShadowRadius: 20,
@@ -142,21 +149,21 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 24,
-    color: '#ff00ff',
+    color: COLORS.neonMagenta,
     textShadowColor: '#f0f',
     textShadowRadius: 10,
     marginBottom: 4,
   },
   stat: {
     fontSize: 40,
-    color: '#00ff00',
+    color: COLORS.neonGreen,
     textShadowColor: '#0f0',
     textShadowRadius: 15,
     marginVertical: 4,
   },
   unit: {
     fontSize: 24,
-    color: '#00ffff',
+    color: COLORS.neonCyan,
     marginTop: 4,
     textShadowColor: '#0ff', // Glow neón
     textShadowRadius: 20,
