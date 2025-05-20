@@ -125,6 +125,7 @@ const styles = StyleSheet.create({
     textShadowColor: '#0ff', // Glow neón
     textShadowRadius: 20,
     fontFamily: 'Audiowide',
+    textShadowOffset: {width: 0, height: 0},
   },
 
   mainSpeedLable: {
@@ -164,6 +165,7 @@ const styles = StyleSheet.create({
     textShadowRadius: 15,
     marginVertical: 4,
     fontFamily: 'VT323',
+    textShadowOffset: {width: 0, height: 0},
   },
 
   unit: {

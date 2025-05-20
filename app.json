@@ -1,4 +1,5 @@
 {
   "name": "DonApoGPS",
-  "displayName": "DonApoGPS"
+  "displayName": "DonApoGPS",
+  "orientation": "portrait"
 }

@@ -17,7 +17,6 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     backgroundColor: '#0d011f', // oscuro púrpura
     flex: 1,
-    fontFamily: 'Audiowide',
   },
 });
 
