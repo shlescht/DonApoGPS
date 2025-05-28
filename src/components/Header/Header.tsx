@@ -8,11 +8,11 @@ export const Header = () => {
   const [visible, setVisible] = useState<boolean>(false);
   const handleMenuPress = () => {
     console.log('Abrir menú o mapa próximamente');
-    setIcon(!icon);
     handleModalClose();
   };
   const handleModalClose = () => {
     setVisible(!visible);
+    setIcon(!icon);
   };
   return (
     <View style={styles.container}>
